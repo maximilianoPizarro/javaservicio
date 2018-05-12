@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.javaservicio.modelo.Login" table="login" schema="public">
+
+		<id name="idlogin" type="integer">
+			<column name="idlogin" />
+		</id>
+				
+		<property name="useer" type="string">
+			<column name="useer" />
+		</property>
+		<property name="pass" type="string">
+			<column name="pass" />
+		</property>
+		
+		<property name="superlogin" type="boolean">
+			<column name="superlogin" />
+		</property>
+		
+		<one-to-one name="tipologin"  class="com.javaservicio.modelo.Tipos"/>
+	</class>
+	
+</hibernate-mapping>

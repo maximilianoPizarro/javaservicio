@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.javaservicio.modelo.Usuario" table="usuario" schema="public">
+
+		<id name="idusuario" type="integer">
+			<column name="idusuario" />
+		</id>
+						
+		<property name="dni" type="int">
+			<column name="dni" />
+		</property>
+		<property name="nombre" type="string">
+			<column name="nombre" />
+		</property>
+		
+		<property name="apellido" type="string">
+			<column name="apellido" />
+		</property>
+		
+		<property name="email" type="string">
+			<column name="email" />
+		</property>
+		
+		<property name="bajausuario" type="boolean">
+			<column name="bajausuario" />
+		</property>	
+	<one-to-one name="login"  class="com.javaservicio.modelo.Login"/>
+	</class>
+		
+</hibernate-mapping>
